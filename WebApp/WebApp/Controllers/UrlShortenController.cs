@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    public class UrlShortenController : ControllerBase
+    [Route("api/[controller]")]
+    public class URLShortnerController : ControllerBase
     {
         private readonly IValidator<ShortLinkCreateRequest> validator;
         private readonly IMapper mapper;
         private readonly ILinkService linkService;
 
-        public UrlShortenController(IValidator<ShortLinkCreateRequest> validator, IMapper mapper, ILinkService linkService)
+        public URLShortnerController(IValidator<ShortLinkCreateRequest> validator, IMapper mapper, ILinkService linkService)
         {
             this.validator = validator;
             this.mapper = mapper;
