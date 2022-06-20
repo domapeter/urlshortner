@@ -14,7 +14,7 @@ namespace DTO.Validators
             RuleFor(r => r).NotNull();
             RuleFor(r => r.Url).NotEmpty();
 
-            RuleFor(r => r.Url).Must(l => Uri.TryCreate(l, UriKind.Absolute, out Uri _));
+            RuleFor(r => r.Url).Must(l => Uri.TryCreate(l, UriKind.Absolute, out Uri _)).WithMessage("Text is not a valid URL");
         }
     }
 }
